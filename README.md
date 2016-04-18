@@ -31,7 +31,7 @@ Instantiate Migo
   r := migo.New("templates")
 ```
 
-Using migo you can render the signin template under the account directory by calling `r.Render(rw, "account/signin")` where `rw` is an `http.ResponseWriter`.
+Using migo you can render the signin template under the account directory by calling `r.Render(rw, "account/signin", data)` where `rw` is an `http.ResponseWriter` and data satisfies type `interface{}`.
 
 ## Opinionated
 Migo is opinionated. If you'd like a directory of template files to share a common layout, create a shared folder and file `layout.tmpl` which will be the layout for that directory. All directories that don't have `shared/layout.tmpl` will inherit the layout defined in `{template_base_path}/shared/layout.tmpl`.
